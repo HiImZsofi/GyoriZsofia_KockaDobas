@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             }
             else{
                 rnd1 = (1..6).random()
+                numbers.append(rnd1.toString() + "\n")
             }
         }
     }
