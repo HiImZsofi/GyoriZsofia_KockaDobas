@@ -1,5 +1,7 @@
 package com.example.kockadobas
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -52,6 +54,24 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, rnd1.toString(), Toast.LENGTH_SHORT).show()
             }
         }
+
+        btnReset.setOnClickListener{
+            resetGame()
+        }
+    }
+
+    fun resetGame(){
+        var resetGameDialogBuilder = AlertDialog.Builder(this@MainActivity)
+        resetGameDialogBuilder.setTitle("Reset")
+        resetGameDialogBuilder.setMessage("Biztos, hogy törölni szeretné az eddigi dobásokat?")
+        resetGameDialogBuilder.setCancelable(false)
+        resetGameDialogBuilder.setNegativeButton("Nem", DialogInterface.OnClickListener {
+                dialog, id ->
+        })
+        resetGameDialogBuilder.setPositiveButton("Igen", DialogInterface.OnClickListener {
+                dialog, id -> numbers.setText("")
+        })
+        resetGameDialogBuilder.show()
     }
 
     fun init(){
