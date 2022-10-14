@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.core.view.isVisible
+
+var rnd1 : Int = 0
+var rnd2 : Int = 0
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,13 +28,26 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         init()
+        var sum : Int = 0
 
         diceone.setOnClickListener{
-            right.setVisibility(View.GONE);
+            right.setVisibility(View.GONE)
         }
 
         dicetwo.setOnClickListener{
-            right.setVisibility(View.VISIBLE);
+            right.setVisibility(View.VISIBLE)
+        }
+
+        btnThrow.setOnClickListener{
+            if(right.isVisible){
+                rnd1 = (1..6).random()
+                rnd2 = (1..6).random()
+                sum = rnd1 + rnd2
+                numbers.append(sum.toString() + " (" + rnd1.toString() + "+" + rnd2.toString() + ")\n")
+            }
+            else{
+                rnd1 = (1..6).random()
+            }
         }
     }
 
