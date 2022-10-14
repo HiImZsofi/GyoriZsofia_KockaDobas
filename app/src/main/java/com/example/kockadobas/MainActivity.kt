@@ -44,10 +44,12 @@ class MainActivity : AppCompatActivity() {
                 rnd2 = (1..6).random()
                 sum = rnd1 + rnd2
                 numbers.append(sum.toString() + " (" + rnd1.toString() + "+" + rnd2.toString() + ")\n")
+                Toast.makeText(this@MainActivity, sum.toString() + " (" + rnd1.toString() + "+" + rnd2.toString() + ")", Toast.LENGTH_SHORT).show()
             }
             else{
                 rnd1 = (1..6).random()
                 numbers.append(rnd1.toString() + "\n")
+                Toast.makeText(this@MainActivity, rnd1.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }
