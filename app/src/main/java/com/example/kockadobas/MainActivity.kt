@@ -2,6 +2,7 @@ package com.example.kockadobas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +24,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         init()
+
+        diceone.setOnClickListener{
+            right.setVisibility(View.GONE);
+        }
+
+        dicetwo.setOnClickListener{
+            right.setVisibility(View.VISIBLE);
+        }
     }
 
     fun init(){

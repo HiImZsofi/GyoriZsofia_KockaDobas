@@ -24,13 +24,15 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/right"
-                android:src="@drawable/kocka1" />
+                android:src="@drawable/kocka1"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/left"
-                android:src="@drawable/kocka1"/>
+                android:src="@drawable/kocka1"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 
